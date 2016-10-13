@@ -483,3 +483,31 @@ Request URL: /cakephp/css/bootstrap.min.css.map
 Stack Trace:
 #0 /var/www/html/cakephp/app/webroot/index.php(102): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2016-10-13 07:08:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/css/bootstrap.min.css.map
+Stack Trace:
+#0 /var/www/html/cakephp/app/webroot/index.php(102): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 07:08:44 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/css/bootstrap-theme.min.css.map
+Stack Trace:
+#0 /var/www/html/cakephp/app/webroot/index.php(102): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-10-13 08:26:53 Error: Fatal Error (4): syntax error, unexpected ',' in [/var/www/html/cakephp/app/Controller/ProductosController.php, line 48]
+2016-10-13 08:26:53 Error: [FatalErrorException] syntax error, unexpected ','
+Request URL: /cakephp/productos/editar/8
+Stack Trace:
+#0 /var/www/html/cakephp/lib/Cake/Error/ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 48)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 48, Array)
+#2 /var/www/html/cakephp/lib/Cake/Core/App.php(1032): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 48, Array)
+#3 /var/www/html/cakephp/lib/Cake/Core/App.php(1005): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

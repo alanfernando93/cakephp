@@ -12,14 +12,14 @@ class ProductosController extends AppController {
 			$this->Producto->create ();
 			if ($this->Producto->saveAll ( $this->data )) {
 				$this->Session->setFlash ( 'Los Datos fueron registrados con exito..!!!', 'default', array (
-						'class' => 'success'
+						'class' => 'alert alert-success'
 				) );
 				$this->redirect ( array (
 						'controller' => 'productos',
 						'action' => 'index'
 				) );
 			} else {
-				$this->Session->setFlash ( 'No se pudo resgistrar el producto' );
+				$this->Session->setFlash ( 'No se pudo resgistrar el producto' ,'default',array('class'=>'alert alert-danger'));
 			}
 		}
 	}
@@ -27,25 +27,25 @@ class ProductosController extends AppController {
 		$this->Producto->id = $id;
 		$this->data = $this->Producto->read ();
 		if (! $id) {
-			$this->Session->setFlash ( 'No existe el producto a eliminar' );
+			$this->Session->setFlash ( 'No existe el producto a eliminar' ,'default',array('class'=>'alert alert-danger'));
 			$this->redirect ( array (
 					'action' => 'index'
 			) );
 		} else {
 			if ($this->Producto->delete ( $id )) {
-				$this->Session->setFlash ( 'Se elimino el producto ' . $this->data ['Producto'] ['nombre'] );
+				$this->Session->setFlash ( 'Se elimino el producto ' . $this->data ['Producto'] ['nombre'] , 'default',array('class'=>'alert alert-success'));
 				$this->redirect ( array (
 						'action' => 'index'
 				) );
 			} else {
-				$this->Session->setFlash ( 'Error al eliminar' );
+				$this->Session->setFlash ( 'Error al eliminar' ,'default', array('class'=>'alert alert-danger'));
 			}
 		}
 	}
 	public function editar($id = null) {
 		$this->Producto->id = $id;
 		if (! $id) {
-			$this->Session->setFlash ( 'No existe tal registro' );
+			$this->Session->setFlash ( 'No existe tal registro' , 'default',array('class'=>'alert alert-danger'));
 			$this->redirect ( array (
 					'action' => 'index'
 			), null, true );
@@ -54,12 +54,12 @@ class ProductosController extends AppController {
 			$this->data = $this->Producto->read ();
 		} else {
 			if ($this->Producto->save ( $this->data )) {
-				$this->Session->setFlash ( 'Los datos fueron modificados' );
+				$this->Session->setFlash ( 'Los datos fueron modificados' ,'default', array('class'=>'alert alert-success'));
 				$this->redirect ( array (
 						'action' => 'index'
 				), null, true );
 			} else {
-				$this->Session->setFlash ( 'nose pudo modificar!!' );
+				$this->Session->setFlash ( 'nose pudo modificar!!' , 'default',array('class'=>'alert alert-danger'));
 			}
 		}
 	}
